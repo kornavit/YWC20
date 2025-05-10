@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Kanit } from "next/font/google";
-
 import { Navbar } from "@/components/Navbar";
 
-const kanit = Kanit({
-  weight: "400"
-})
 
 export const metadata: Metadata = {
   title: "YWC20 - kornavit",
@@ -20,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={kanit.className}>
+    <html lang="en">
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <main className="mt-16">
