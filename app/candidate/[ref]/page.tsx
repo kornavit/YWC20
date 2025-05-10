@@ -1,4 +1,5 @@
 import Image from "next/image"
+
 import { DetailCandidate ,Candidate } from "@/type/ResponseAPI"
 
 async function fetchCandidates(ref: string): Promise<DetailCandidate | undefined> {
@@ -29,8 +30,8 @@ async function fetchCandidates(ref: string): Promise<DetailCandidate | undefined
     }
 }
 
-export default async function Page({ params }: { params: { ref: string } }) {
-    const { ref } = params
+export default async function Page({ params }: { params: Promise<{ ref: string }> }) {
+    const { ref } = await params
     const post = [
         {
             name: "John Doe",
